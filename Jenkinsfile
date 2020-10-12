@@ -5,6 +5,12 @@ pipeline {
         maven 'Maven-3.6.3'
     }
 
+    environment {
+        JAR_FILENAME = "hello-jenkins"
+        JAR_VERSION = "1.0-SNAPSHOT"
+        PARAM1 = "Shyam Sundar"
+    }
+
     stages {
         stage("Test") {
             steps {
@@ -20,7 +26,7 @@ pipeline {
 
         stage("Execute Main class") {
             steps {
-                sh "java -cp target/hello-jenkins-1.0-SNAPSHOT.jar com.sapient.Main \"Vinod Kumar\""
+                sh "java -cp target/${JAR_FILENAME}-${JAR_VERSION}.jar com.sapient.Main \"${PARAM1}\""
             }
         }
     }
