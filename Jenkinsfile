@@ -37,6 +37,7 @@ pipeline {
         success {
             echo "This will be executed only when all stages succeed"
             junit '**/*xml'
+            jacoco execPattern: '**/jacoco.exec'
             archiveArtifacts artifacts: "target/${JAR_FILENAME}-${JAR_VERSION}.jar", followSymlinks: false
             deleteDir()
         }
