@@ -43,11 +43,6 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.6</version>
 
-                <configuration>
-                    <excludes>**/Main.java</excludes>
-                </configuration>
-
-
                 <executions>
                     <execution>
                         <goals>
