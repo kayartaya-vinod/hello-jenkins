@@ -26,6 +26,6 @@ class TestHelloService {
 
     @Test
     void testGetHelloMessageWithEmptyName() {
-        Assertions.assertEquals("Hello, friend!", service.getHelloMessage("   "));
+        Assertions.assertEquals("Hello, friend", service.getHelloMessage("   "));
     }
 }
