@@ -42,9 +42,9 @@ pipeline {
         }
         failure {
             echo "This will be executed whenever any stage fails"
-            mail to: 'vinod@knowledgeworksindia.com',
-                subject: 'Failed stage in Pipeline ${currentBuild.fullDisplayName}',
-                body: 'Something went wrong during build.'
+//             mail to: 'vinod@knowledgeworksindia.com',
+//                 subject: 'Failed stage in Pipeline ${currentBuild.fullDisplayName}',
+//                 body: 'Something went wrong during build.'
         }
     }
 }
