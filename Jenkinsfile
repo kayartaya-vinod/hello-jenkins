@@ -38,10 +38,13 @@ pipeline {
             echo "This will be executed only when all stages succeed"
             junit '**/*xml'
             archiveArtifacts artifacts: "target/${JAR_FILENAME}-${JAR_VERSION}.jar", followSymlinks: false
-
+            deleteDir()
         }
         failure {
             echo "This will be executed whenever any stage fails"
+            mail to: 'vinod@knowledgeworksindia.com'
+                subject: 'Failed stage in Pipeline ${currentBuild.fullDisplayName}'
+                body: 'Something went wrong during build.'
         }
     }
 }
